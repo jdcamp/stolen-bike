@@ -29,7 +29,7 @@ Bike.prototype.searchBikes = function() {
             for (var i = 0; i < response.bikes.length; i++) {
                 str = str + '<tr>' + '<td>'+ response.bikes[i].title+'</td>';
                   str = str + '<td>' + response.bikes[i].stolen_location + '</td>' +
-                '</tr>';
+                '</tnr>';
             }
             console.log(response);
         }).then(function(){
