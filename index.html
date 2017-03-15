@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <link rel="stylesheet" href="build/css/vendor.css">
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
     <title>Bikes</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="container">
-      <h3>Search for Stolen Bikes</h3>
-      <form id='bike-form'>
-        <label for"manufacturer">manufacturer</label>
-        <input type="text" required name="manufacturer" id="manufacturer"><br>
-<!--
-        <label for"color">color</label>
-        <input type="text" required name="color" value=""><br> -->
+        <h3>Search for Stolen Bikes</h3>
+        <form id='bike-form'>
+            <div class="form-group row">
+                <label for "manufacturer">manufacturer</label>
+                <input type="text" required name="manufacturer" id="manufacturer" class="form-control"><br>
+            </div>
 
-        <label for"place">place</label>
-        <input type="text" required name="place" id="place"><br>
+            <div class="form-group row">
+                <label for "place">place</label>
+                <input type="text" required name="place" id="place" class="form-control"><br>
+            </div>
 
-        <label for"distance">distance</label>
-        <input type="number" min='1' required name="distance" id="distance"><br>
-        <button type="submit" id='#bike-form-button'>Enter</button>
-      </form>
+            <div class="form-group row">
+                <label for "distance">distance</label>
+                <input type="number" min='1' required name="distance" id="distance" class="form-control"><br>
+            </div>
+            <button type="submit" id='#bike-form-button'>Enter</button>
+        </form>
 
-      <h3 class="showBikes"></h3>
+        <div class="showBikes"></div>
+
     </div>
-  </body>
+</body>
+
 </html>

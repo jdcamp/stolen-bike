@@ -6,10 +6,10 @@ $(document).ready(function() {
     console.log("stuff");
     var manufacturer = $('#manufacturer').val();
     // var color = $('input[name="color"]').val();
-    var location = $('#location').val();
-    console.log(location);
+    var place = $('#place').val();
+    console.log(place);
     var distance = $('#distance').val();
-    var newBike = new Bike(manufacturer, location, distance);
+    var newBike = new Bike(manufacturer, place, distance);
     newBike.searchBikes();
   });
 });
