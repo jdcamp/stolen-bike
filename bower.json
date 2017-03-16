@@ -1,9 +1,9 @@
 {
-  "name": "bikes",
+  "name": "bower install",
   "description": "",
   "main": "index.js",
   "license": "ISC",
-  "homepage": "",
+  "homepage": "https://github.com/jeemb/bike-search",
   "ignore": [
     "**/.*",
     "node_modules",

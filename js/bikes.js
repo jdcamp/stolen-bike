@@ -1,3 +1,5 @@
+/* jshint loopfunc: true */
+
 function Bike(manufacturer, place, distance) {
     // this.serial = serial;
     // this.query = query;
@@ -9,7 +11,8 @@ function Bike(manufacturer, place, distance) {
 
 var places_array = [];
 
-Bike.prototype.searchBikes = function() {
+Bike.prototype.searchBikes = function(callback) {
+    var lon_lat = [];
     // serial = this.serial;
     manufacturer = this.manufacturer;
     // color = this.color;
@@ -42,18 +45,21 @@ Bike.prototype.searchBikes = function() {
                         '</tr>';
                 }
             }
-            console.log(response);
         }).then(function() {
             str = str + '</tbody>' + '</table>';
             $('.showBikes').append(str);
-            $.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + places_array[0] + '&key=AIzaSyC--LYrYUurZ4iJZyiR7wYZCoCAAjme1KM')
-                .then(function(response) {
-                    console.log(response);
-                    var lon = response.geometry.location[1];
-                    var lat = response.geometry.location[0];
-                });
+            for (var i = 0; i < places_array.length; i++) {
+                $.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + places_array[i] + '&key=AIzaSyC--LYrYUurZ4iJZyiR7wYZCoCAAjme1KM')
+                    .then(function(response) {
+                        var lon = response.results[0].geometry.location.lng;
+                        var lat = response.results[0].geometry.location.lat;
+                        coordinates = [lat, lon];
+                        lon_lat.push(coordinates);
+                        console.log(lon_lat);
+                    });
+            }
+        }).then(function() {
+            setTimeout(callback(lon_lat), 2000);
         });
-
 };
-
 exports.bikeModule = Bike;

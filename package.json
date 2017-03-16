@@ -1,7 +1,6 @@
 {
   "name": "bikes",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,5 +21,14 @@
     "gulp-util": "^3.0.8",
     "jshint": "^2.9.4",
     "vinyl-source-stream": "^1.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeemb/bike-search.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jeemb/bike-search/issues"
+  },
+  "homepage": "https://github.com/jeemb/bike-search#readme",
+  "description": ""
 }
